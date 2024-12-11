@@ -154,10 +154,8 @@ app.put("/update-recipe", upload.single("thumbnail"), async (req, res) => {
   const { id, title, recipe } = req.body;
 
   try {
-    // Validate input data
     await editRecipe.validate({ id, title, recipe }, { abortEarly: false });
 
-    // Retrieve the current recipe from the database
     db.get(
       "SELECT thumbnail FROM recipes WHERE id = ?",
       [id],
@@ -171,7 +169,6 @@ app.put("/update-recipe", upload.single("thumbnail"), async (req, res) => {
 
         let thumbnail = row.thumbnail;
 
-        // If a new thumbnail is uploaded, replace the old one
         if (req.file) {
           const oldThumbnailPath = path.join(
             __dirname,
