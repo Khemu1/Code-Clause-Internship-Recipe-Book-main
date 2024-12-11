@@ -25,17 +25,12 @@ Before you begin, ensure you have met the following requirements:
     npm install
     ```
 
-4. Install the Vite dependencies:
-    ```bash
-    npm install vite
-    ```
-
-5. Start the Vite dev server:
+4. Start the Vite dev server:
     ```bash
     npm run dev
     ```
 
-6. In a new terminal window, start the Express server:
+5. In a new terminal window, start the Express server:
     ```bash
     npm run serve
     ```
@@ -49,9 +44,13 @@ Before you begin, ensure you have met the following requirements:
 
 ## API Endpoints
 
+### Get Recipes
+- **URL:** `/get-recipes`
+- **Method:** `GET`
+
 ### Add Recipe
 
-- **URL:** `/add`
+- **URL:** `/add-recipe`
 - **Method:** `POST`
 - **Request Body:** `multipart/form-data`
   - `title` (string): The title of the recipe
@@ -60,7 +59,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Update Recipe
 
-- **URL:** `/update`
+- **URL:** `/update-recipe`
 - **Method:** `PUT`
 - **Request Body:** `multipart/form-data`
   - `id` (string): The ID of the recipe to update
@@ -70,7 +69,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Delete Recipe
 
-- **URL:** `/delete`
+- **URL:** `/delete-recipe`
 - **Method:** `POST`
 - **Request Body:** `application/json`
   - `id` (string): The ID of the recipe to delete
